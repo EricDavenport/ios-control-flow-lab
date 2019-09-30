@@ -33,6 +33,10 @@ print("D")
 - C
 - D
 
+Answer - 
+A\n C\n D\n
+B will not print because conditionOne renders true before the else statement.
+
 ***
 ## Question 2
 
@@ -49,6 +53,9 @@ switch appInfo {
  print("I'm not quite sure what you are looking at")
 }
 ```
+Answer - 
+This should print
+"myCoolApp hasn't released yet"
 
 - appInfo.0 hasn't released yet
 - myCoolApp hasn't released yet
@@ -78,7 +85,7 @@ default:
 - A
 - B
 - C
-- D
+- D[x] - Answer
 
 ***
 ## Question 4
@@ -96,7 +103,12 @@ case "skittles":
 case "snickers":
  print("Hungry? Grab a Snickers")
 }
+
+
 ```
+Answer
+1. There s no default case
+1. No additional errors found
 
 - No parentheses around the conditions
 - No opening and closing brackets in each of the cases
@@ -113,6 +125,16 @@ let currentWeather = "rain"
 
 // enter code below
 ```
+Answer - 
+let currentWeather = "rain"
+
+switch currentWeather {
+case "rain":
+    print("Current weather is rainy, bring an umbrella.")
+case "snow":
+    print("Current wather is snowy. Bundle up.")
+default:  //Sunny
+    print("It is pretty nice out. Dress accordingly.")
 
 ***
 ## Question 6
@@ -125,6 +147,11 @@ let lastName = "Appleseed"
 
 // enter code below
 ```
+Answer
+let firstName = "John"
+let lastName = "Appleseed"
+
+print("Fellow's full name is \(firstName) \(lastName)")
 
 ***
 
@@ -144,6 +171,17 @@ if temperatureInFahrenheit <= 40 {
 //Re-written statement here
 
 ```
+Answer - 
+var temperatureInFarenheit = 86
+
+switch temperatureInFarenheit {
+case ..<40:
+    print("It's cold out.")
+case 85...:
+    print("It's really warm.")
+default:
+    print("Weather is moderate.")
+}
 
 ***
 
@@ -159,6 +197,15 @@ else {
  print("You lose!")
 }
 ```
+
+let winner = Bool.random()
+
+if winner {
+ print("You win!")
+}
+else {
+ print("You lose!")
+}
 ***
 
 ## Question 9
@@ -185,6 +232,29 @@ Output:
 Error
 
 ```
+
+var numberOFSides = Int.random(in: 1...10)
+
+switch numberOFSides {
+case 3:
+    print("\(numberOFSides) sides, Triangle")
+case 4:
+    print("\(numberOFSides) sides, Square or Rectangle")
+case 5:
+    print("\(numberOFSides) sides, Pentagon")
+case 6:
+    print("\(numberOFSides) sides, Hexagon")
+case 7:
+    print("\(numberOFSides) sides, Heptagon")
+case 8:
+    print("\(numberOFSides) sides, Octagon")
+case 9:
+    print("\(numberOFSides) sides, Nonagon")
+case 10:
+    print("\(numberOFSides) sides, Decagon")
+default:
+    print("\(numberOFSides) sides, Not a 3 or more sides shape.")
+}
 ***
 
 ## Question 10
@@ -200,6 +270,24 @@ Numeric Score 	Letter Grade
 65 - 69 	D
 Below 65 	F
 ```
+var myGrade = Int.random(in: 0...100)
+
+switch myGrade {
+case 100...:
+    print("Number grade is \(myGrade), letter grade is A+")
+case 90...99:
+    print("Current nuber grande is \(myGrade), A.")
+case 80...89:
+    print("Current nuber grande is \(myGrade), B.")
+case 70...79:
+    print("Current nuber grande is \(myGrade), C.")
+case 65...69:
+    print("Current nuber grande is \(myGrade), D.")
+default:
+    print("Current grade below passing. \(myGrade).")
+}
+
+
 ***
 
 ## Question 11
@@ -248,15 +336,20 @@ case 42:
 default:
  print("Some uninteresting number")
 ```
+Answer - 
+System should print, "The answer to life, the universe and everything"
+"
 What happens when you change number to:
-
 -a. 365?
-
+Days in a year
 -b. 1024?
-
+Bytes in a Kilobyte
 -c. 65?
-
+"Some uninteresting number"
 What happens when you remove the default clause?
+"Switch must be exhaustive, do you want to add a default clause"
+
+
 
 ***
 
@@ -279,6 +372,17 @@ if population > 10000 {
  message = "\(population) is a large town"
 }
 ```
+var population: Int = 10000
+var message = String()
+
+if population >= 10000 {
+ message = "\(population) is a large town"
+} else if population > 5000 {
+    print("This is a meduim sized town.")
+} else {
+    print("This is a mid-sized town.")
+}
+
 ***
 
 ## Question 15
@@ -289,7 +393,27 @@ a. Using a conditional
 
 b. Using a switch statement
 
+
 ```swift
 let myTuple: (Int, Int) = (5, 10)
 ```
+Answer - 
+a.
+if tupleSum == 15{
+    print("Sum of both numbers is 15.")
+} else {
+    print("The sum of the two numbers is \(tupleSum)")
+} 
+
+b.
+let myTuple: (Int, Int) = (10, 10)
+var tupleSum = myTuple.0 + myTuple.1
+print(tupleSum)
+
+switch tupleSum {
+case 15:
+    print("Sum of both numbers is 15.")
+default:
+    print("The sum of the two numbers is \(tupleSum)")
+}
 ***
